@@ -21,6 +21,5 @@ def remove_old_texts(txt_file):
   with open(txt_file, "w", encoding='cp437') as f:
     f.writelines(new_lines)
 
-
 if __name__ == "__main__":
   remove_old_texts("txt_file.txt")
