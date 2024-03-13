@@ -6,7 +6,7 @@ To change the date you can change line 9 and put the year, month and day you des
 As the format from exported Whatsapp messages in my country is [dd/mm/yyyy] that's what I'm using.
 Also, the function verifies if the message is a new message or the same message in a different line to avoid code breaks."""
 def remove_old_texts(txt_file):
-  limit_date = datetime.datetime(yyyy, m, dd)
+  limit_date = datetime.datetime(2023, 3, 11)
   new_lines = []
 
   with open(txt_file, "r", encoding='cp437') as f:
@@ -30,7 +30,7 @@ def remove_user_messages(txt_file):
 
     with open(txt_file, "r", encoding='cp437') as f:
         for line in f:
-            if not re.search(r"User ", line):
+            if not re.search(r"Tata ", line):
                 new_lines.append(line)
 
     with open(txt_file, "w", encoding='cp437') as f:
@@ -53,6 +53,6 @@ def remove_hidden_media(txt_file):
 
 
 if __name__ == "__main__":
-    remove_old_texts("txt_file.txt")
-    remove_user_messages("txt_file.txt")
-    remove_hidden_media("txt_file.txt")
+    remove_old_texts("_chat.txt")
+    remove_user_messages("_chat.txt")
+    remove_hidden_media("_chat.txt")
